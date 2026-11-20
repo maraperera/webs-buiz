@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#171C19">
+    <title>Barber Shop Business</title>
+    <meta name="description" content="Classic craft meets modern style. Sharp fades, clean lines and the confidence that follows.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --dark: #171C19;
+        --accent: #CDA36D;
+        --light: #F4EEE5;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'DM Sans',sans-serif;
+        color: var(--dark);
+        background: #fff;
+      }
+      h1,h2,h3,.brand {
+        font-family: Manrope,sans-serif;
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: -.065em;
+      }
+      .eyebrow {
+        font-size: .72rem;
+        letter-spacing: .22em;
+        font-weight: 800;
+        color: var(--accent);
+        margin-bottom: 1.4rem;
+      }
+      .section-title {
+        font-size: clamp(2.6rem,6vw,5.2rem);
+        font-weight: 800;
+        letter-spacing: -.075em;
+        line-height: 1.07;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        background: var(--accent);
+        color: var(--dark);
+        font-weight: 800;
+        border-radius: 999px;
+        padding: 1rem 1.5rem;
+        transition: transform .2s,filter .2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+      }
+      .service-card {
+        border: 1px solid #d9dedf;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 330px;
+        transition: transform .2s,box-shadow .2s;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px #00000012;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        font-size: .8rem;
+        font-weight: 700;
+      }
+      .field input,.field select,.field textarea {
+        width: 100%;
+        border: 1px solid #d9dfdf;
+        border-radius: .85rem;
+        padding: .9rem 1rem;
+        font-size: .95rem;
+        font-weight: 400;
+        background: white;
+        outline-offset: 2px;
+      }
+      .field input:focus,.field select:focus,.field textarea:focus {
+        outline: 2px solid var(--accent);
+      }
+      .hero-image {
+        background-image: linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.38) 60%,rgba(0,0,0,.18) 100%),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&q=85');
+        background-size: cover;
+        background-position: center;
+      }
+      .nav-link:hover {
+        color: var(--accent);
+      }
+      @media(max-width:767px) {
+        .hero-image {
+          background-position: 60% center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="absolute top-0 inset-x-0 z-20 text-white">
+      <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <a href="#home" class="brand text-xl lg:text-3xl" aria-label="Barber Shop Business home">Barber Shop Business</a>
+        <div class="hidden md:flex items-center gap-9 text-sm font-semibold">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#about">Why us</a>
+          <a class="nav-link" href="#booking">Book online</a>
+        </div>
+        <a href="#booking" class="hidden md:inline-flex border border-white/60 rounded-full px-5 py-3 text-sm font-semibold hover:bg-white hover:text-black transition">Book your chair ↗</a>
+        <button id="menu-toggle" class="md:hidden border border-white/40 rounded-xl px-4 py-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">☰</button>
+      </nav>
+      <div id="mobile-menu" class="hidden md:hidden mx-6 rounded-2xl p-5 space-y-4 bg-slate-950/95">
+        <a class="block" href="#services">Services</a>
+        <a class="block" href="#about">Why us</a>
+        <a class="block" href="#booking">Book online</a>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="hero-image relative min-h-[720px] md:min-h-[800px] flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6 w-full pt-24 pb-20">
+          <div class="max-w-3xl">
+            <p class="text-xs sm:text-sm tracking-[.32em] font-bold mb-8" style="color:var(--accent)">BARBER STUDIO · MELBOURNE</p>
+            <h1 class="text-[clamp(3.5rem,9vw,8.4rem)] leading-[.98] tracking-[-.085em] font-extrabold">A cut above.<br><span style="color:var(--accent)">Every single time.</span></h1>
+            <p class="mt-8 max-w-xl text-lg text-white/80 leading-8">Classic craft meets modern style. Sharp fades, clean lines and the confidence that follows.</p>
+            <div class="mt-10 flex flex-wrap gap-4 items-center">
+              <a href="#booking" class="btn">Book your chair <span>↗</span></a>
+              <a href="#services" class="px-6 py-4 rounded-full border border-white/50 font-semibold hover:bg-white/10">Explore services ↓</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-8 left-6 right-6 max-w-7xl mx-auto flex justify-between text-xs tracking-widest text-white/60"><span>QUALITY IN EVERY DETAIL</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </section>
+      <section id="services" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row justify-between md:items-end gap-8 mb-14">
+            <div>
+              <p class="eyebrow">WHAT WE DO</p>
+              <h2 class="section-title">The services.<br>The difference.</h2>
+            </div>
+            <p class="max-w-sm text-slate-600 leading-8">Good grooming never goes out of style. Discover our most popular services and find the right fit for you.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-5">
+            <article class="service-card">
+              <span class="text-sm opacity-60">01</span>
+              <div class="mt-12">
+                <div class="text-4xl mb-6">✦</div>
+                <h3 class="text-2xl font-bold">Signature Haircut</h3>
+                <p class="mt-4 text-sm opacity-70 leading-7">Professional care and thoughtful attention, tailored to your space and needs.</p>
+              </div>
+              <a href="#booking" class="mt-8 inline-block font-semibold underline underline-offset-8">Explore service ↗</a>
+            </article>
+            <article class="service-card">
+              <span class="text-sm opacity-60">02</span>
+              <div class="mt-12">
+                <div class="text-4xl mb-6">◈</div>
+                <h3 class="text-2xl font-bold">Skin Fade</h3>
+                <p class="mt-4 text-sm opacity-70 leading-7">Professional care and thoughtful attention, tailored to your space and needs.</p>
+              </div>
+              <a href="#booking" class="mt-8 inline-block font-semibold underline underline-offset-8">Explore service ↗</a>
+            </article>
+            <article class="service-card">
+              <span class="text-sm opacity-60">03</span>
+              <div class="mt-12">
+                <div class="text-4xl mb-6">✳</div>
+                <h3 class="text-2xl font-bold">Beard Sculpt</h3>
+                <p class="mt-4 text-sm opacity-70 leading-7">Professional care and thoughtful attention, tailored to your space and needs.</p>
+              </div>
+              <a href="#booking" class="mt-8 inline-block font-semibold underline underline-offset-8">Explore service ↗</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="py-24 md:py-32" style="background:var(--dark);color:white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="eyebrow">OUR WAY</p>
+            <h2 class="section-title">A better experience.<br><span style="color:var(--accent)">From start to finish.</span></h2>
+            <p class="mt-8 text-white/65 max-w-lg leading-8">Great results are about more than the finished job. We focus on care, communication and the little details that make all the difference.</p>
+            <a href="#booking" class="btn mt-9">Let's talk <span>↗</span></a>
+          </div>
+          <div class="grid gap-4">
+            <div class="border border-white/20 rounded-2xl p-7 flex items-center gap-5">
+              <span class="text-3xl" style="color:var(--accent)">01</span>
+              <p class="font-bold text-xl">Experienced barbers</p>
+              <span class="ml-auto text-white/50">↗</span>
+            </div>
+            <div class="border border-white/20 rounded-2xl p-7 flex items-center gap-5">
+              <span class="text-3xl" style="color:var(--accent)">02</span>
+              <p class="font-bold text-xl">Relaxed atmosphere</p>
+              <span class="ml-auto text-white/50">↗</span>
+            </div>
+            <div class="border border-white/20 rounded-2xl p-7 flex items-center gap-5">
+              <span class="text-3xl" style="color:var(--accent)">03</span>
+              <p class="font-bold text-xl">Precision cuts</p>
+              <span class="ml-auto text-white/50">↗</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="booking" class="py-24" style="background:var(--light)">
+        <div class="mx-auto max-w-6xl px-6 grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <p class="eyebrow">YOUR NEXT APPOINTMENT</p>
+            <h2 class="section-title">Your chair is<br>waiting.</h2>
+            <p class="mt-5 max-w-md text-slate-600 leading-8">Choose a service and preferred time. This is a front-end booking demo; connect it to your booking API to accept live appointments.</p>
+            <div class="mt-10 p-6 bg-white rounded-3xl">
+              <p class="font-semibold">Opening hours</p>
+              <p class="mt-3 text-sm text-slate-600">Mon–Fri · 9:00 am – 6:00 pm<br>Saturday · 9:00 am – 4:00 pm<br>Sunday · Closed</p>
+            </div>
+          </div>
+          <form id="booking-form" class="bg-white p-7 sm:p-10 rounded-3xl shadow-xl shadow-black/5 space-y-5">
+            <h3 class="text-2xl font-bold">Book an appointment</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="field">Full name<input required name="name" placeholder="Your name"></label>
+              <label class="field">Phone<input required type="tel" name="phone" placeholder="04xx xxx xxx"></label>
+            </div>
+            <label class="field">Select service<select required name="service"><option value="">Choose a service</option><option>Signature Haircut</option><option>Skin Fade</option><option>Beard Sculpt</option><option>Haircut + Beard</option></select></label>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="field">Preferred date<input required type="date" id="booking-date" name="date"></label>
+              <label class="field">Preferred time<select required name="time"><option value="">Choose a time</option><option>9:00 am</option><option>10:00 am</option><option>11:00 am</option><option>12:00 pm</option><option>1:00 pm</option><option>2:00 pm</option><option>3:00 pm</option><option>4:00 pm</option></select></label>
+            </div>
+            <label class="field">Notes (optional)<textarea name="notes" rows="3" placeholder="Anything we should know?"></textarea></label>
+            <button class="btn w-full" type="submit">Request booking <span>↗</span></button>
+            <p id="booking-message" class="text-sm text-slate-600" role="status" aria-live="polite">No payment required to request a time.</p>
+          </form>
+        </div>
+      </section>
+      <section class="py-24 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+          <p class="eyebrow">MAKE IT HAPPEN</p>
+          <h2 class="section-title">Let's make something great.</h2>
+          <p class="mt-6 text-slate-600">Professional service. Exceptional attention to detail. A result you'll love.</p>
+          <a class="btn mt-8" href="#booking">Book your chair <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+    <footer style="background:var(--dark);color:white" class="px-6 py-10">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row gap-5 justify-between items-center">
+        <a href="#home" class="brand text-2xl sm:text-3xl">Barber Shop Business</a>
+        <p class="text-white/60 text-sm">© 2026 Barber Shop Business. Demo website concept.</p>
+        <a href="#home" class="text-sm text-white/70">Back to top ↑</a>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.getElementById('menu-toggle'),
+        menu = document.getElementById('mobile-menu');
+
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden');
+        toggle.setAttribute('aria-expanded', String(!open));
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      }));
+
+      const form = document.querySelector('form');
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const msg = document.getElementById('booking-message');
+        msg.textContent = 'Booking request captured in this demo. Connect a backend to confirm availability and save appointments.';
+        msg.style.color = 'green';
+        form.reset();
+      });
+
+      const date = document.getElementById('booking-date');
+      date.min = new Date().toLocaleDateString('en-CA');
+    </script>
+  </body>
+</html>
